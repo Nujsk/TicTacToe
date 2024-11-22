@@ -9,7 +9,7 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string[] board = new string[9];
+        private string[] board = new string [9];
         private bool playerTurn = true;
         public MainWindow()
         {
@@ -80,6 +80,7 @@ namespace TicTacToe
                 [2, 4, 6]  // dia /
             ];
             
+            // check each condition. if all 3 indexes of condition matches player, in this case "X", player wins
             foreach(var contition in winConditions)
             {
                 if (board[contition[0]] == player &&
@@ -108,8 +109,6 @@ namespace TicTacToe
                     {
                         btn.Content = "";
                         btn.IsEnabled = true;
-                        btn.Foreground = Brushes.Black;
-                        btn.Background = Brushes.Transparent;
                     }
                 }
             }
